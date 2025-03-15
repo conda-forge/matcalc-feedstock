@@ -1,5 +1,5 @@
 {% set name = "matcalc" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matcalc-{{ version }}.tar.gz
-  sha256: 581961a237d23fd7c8cef6478460e405c2cef45a3c34a48f22c8eae1c1c4ec90
+  sha256: 4a78774ecb868def5ff9bc8f63895bd7a9acd86f0ac3c8706d7a547121398e9b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,8 +21,9 @@ requirements:
     - setuptools >=58.0.3
     - pip
   run:
+    - numpy <2.0.0
     - python >={{ python_min }}
-    - ase
+    - ase >=3.23.0
     - joblib
     - phonopy
     - pymatgen
