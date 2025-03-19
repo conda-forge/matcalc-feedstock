@@ -1,5 +1,5 @@
 {% set name = "matcalc" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matcalc-{{ version }}.tar.gz
-  sha256: 4a78774ecb868def5ff9bc8f63895bd7a9acd86f0ac3c8706d7a547121398e9b
+  sha256: bc26c09d73d24b7f99cf7ffa36c72be2dcc98cbaf7897cec2ecb2cc746f25806
 
 build:
   noarch: python
@@ -27,6 +27,7 @@ requirements:
     - joblib
     - phonopy
     - pymatgen
+    - scikit-learn
 
 test:
   imports:
