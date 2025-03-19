@@ -27,6 +27,7 @@ requirements:
     - joblib
     - phonopy
     - pymatgen
+    - scikit-learn
 
 test:
   imports:
