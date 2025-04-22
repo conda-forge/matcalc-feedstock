@@ -1,5 +1,5 @@
 {% set name = "matcalc" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matcalc-{{ version }}.tar.gz
-  sha256: bd240c4f6f1e796200db5138f23d29fd1158f8c435831d395acb8e03fa293d8a
+  sha256: ea3e9eaf441677175cd9d1bfcf9a5e532ca4386235638956b046c2ca48dbbf77
 
 build:
   noarch: python
@@ -29,7 +29,7 @@ requirements:
     - ase >=3.23.0
     - joblib >=1.4.2
     - phonopy >=2.38.0
-    - pymatgen >=2025.3.10
+    - pymatgen >=2025.4.20
     - scikit-learn >=1.6.1
 
 test:
