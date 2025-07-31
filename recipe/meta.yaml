@@ -1,5 +1,5 @@
 {% set name = "matcalc" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matcalc-{{ version }}.tar.gz
-  sha256: c0d30385b99dfe111be80ef9aa142f311b7a95b5434520cd7e7ba351a95bc190
+  sha256: 0e3575c997751e28b25a5d3c5378093b396502a51a775e3cb8c0481fe2334010
 
 build:
   noarch: python
