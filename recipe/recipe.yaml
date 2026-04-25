@@ -1,23 +1,26 @@
-{% set name = "matcalc" %}
-{% set version = "0.4.6" %}
-{% set python_min = "3.11" %}
+schema_version: 1
+
+context:
+  name: matcalc
+  version: 0.4.6
+  python_min: "3.11"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matcalc-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matcalc-${{ version }}.tar.gz
   sha256: 10ba1970e68dafbac2efb2037feb664abfff3323d9c0593a1ebb339b96d08d48
 
 build:
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - numpy
     - setuptools >=58.0.3
     - pip
@@ -25,27 +28,25 @@ requirements:
     - phono3py >=3.15.0
     - fsspec >=2025.3.0
     - numpy <2.0.0
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - ase >=3.26.0
     - joblib >=1.4.2
     - phonopy >=2.38.0
     - pymatgen >=2026.3.23
     - scikit-learn >=1.6.1
 
-test:
-  imports:
-    - matcalc
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - matcalc
+      pip_check: true
 
+      python_version: ${{ python_min }}.*
 about:
-  home: https://materialsvirtuallab.github.io/matcalc
   summary: Calculators for materials properties from the potential energy surface.
   license: BSD-3-Clause
   license_file: LICENSE
+  homepage: https://materialsvirtuallab.github.io/matcalc
 
 extra:
   recipe-maintainers:
