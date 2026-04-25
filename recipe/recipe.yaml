@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: matcalc
   version: 0.4.6
-  python_min: 3.11
+  python_min: "3.11"
 
 package:
   name: ${{ name|lower }}
@@ -20,7 +20,7 @@ build:
 
 requirements:
   host:
-    - python 3.11.*
+    - python ${{ python_min }}.*
     - numpy
     - setuptools >=58.0.3
     - pip
