@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: matcalc
-  version: "0.5.1"
+  version: 0.6.0
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matcalc-${{ version }}.tar.gz
-  sha256: 9eef39d8f61384af4fa324e02f2e7384adb95eb0af8e3a985ab101f48fe436f0
+  sha256: 4f9593d7d4964dc0a9afcf66fd0a32a103402f9c2a4b209bd5d236a51922cdb6
 
 build:
   number: 0
@@ -25,11 +25,10 @@ requirements:
     - setuptools >=58.0.3
     - pip
   run:
-    - phono3py >=3.15.0
     - python >=${{ python_min }}
     - ase >=3.26.0
     - joblib >=1.4.2
-    - phonopy >=2.38.0
+    - phonopy >=4.2.0
     - pymatgen >=2026.3.23
     - scikit-learn >=1.6.1
     - huggingface_hub >=0.30.0
