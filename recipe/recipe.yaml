@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: matcalc
-  version: "0.7.0"
+  version: "0.8.0"
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matcalc-${{ version }}.tar.gz
-  sha256: 4e3f9ed95dc828afc1f7fa3278cc2014cc4aa16de3f02d97cf61f8ff1f1e90e5
+  sha256: 163ec99a2132fca8a72b16aecddc44b69009b0ed34cae6e768ce366b4272c219
 
 build:
   number: 0
